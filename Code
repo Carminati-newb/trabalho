@@ -1,0 +1,179 @@
+
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+
+#define MULTIPLICADOR_CASTRADO 0.2
+#define MULTIPLICADOR_DOENCA 0.3
+
+int main()
+{
+    setlocale(LC_ALL, NULL);
+
+    float tamanho, preco, preco_final;
+    char raca[50], sexo, castrado, doencas, racao[50];
+    int idade, quantidade;
+    int cadastrado = 0;
+
+    int menu = 0;
+    while(menu != 4) {
+        printf("1 - Cadastrar\n2 - Consultar produtos\n3 - Alterar dados\n");
+        scanf("%d", &menu);
+        switch (menu)
+        {
+        case 1: // Cadastrar
+            if(cadastrado == 0)
+            {
+                fgetc(stdin);
+                printf("Insira a raça do seu cachorro:\n");
+                fgets(raca, sizeof(raca), stdin);
+                printf("Insira o sexo do seu cachorro (M/F):\n");
+                scanf(" %c", &sexo);
+                printf("Insira a idade do seu cachorro:\n");
+                scanf("%d", &idade);
+                printf("Insira o tamanho do seu cachorro:\n");
+                scanf("%f", &tamanho);
+                printf("Seu cachorro é castrado? (S/N)\n");
+                scanf(" %c", &castrado);
+                printf("Seu cachorro possui alguma doença? (S/N)\n");
+                scanf(" %c", &doencas);
+
+                printf("Cachorro cadastrado com sucesso!\n");
+                cadastrado = 1;
+            }
+            else
+            {
+                printf("Você já se cadastrou!\n");
+            }
+            break;
+        case 2:
+            printf("1 - Rações grandes\n2 - Rações médias\n3 - Rações pequenas");
+            scanf("%d", &menu);
+            switch (menu)
+            {
+            case 1:
+                printf("Rações grandes:\n1\n2\n3\n4\nQual deseja comprar?\nDigite 5 para sair");
+                scanf("%d", &menu);
+                switch (menu)
+                {
+                case 1:
+                    /* code */
+                    break;
+                case 2:
+                    /* code */
+                    break;
+                case 3:
+                    /* code */
+                    break;
+                case 4:
+                    /* code */
+                    break;
+                default:
+                    break;
+                }
+
+                break;
+            case 2:
+                printf("Rações medias:\n1\n2\n3\n4\nQual deseja comprar?\nDigite 5 para sair");
+                scanf("%d", &menu);
+                switch (menu)
+                {
+                case 1:
+                    /* code */
+                    break;
+                case 2:
+                    /* code */
+                    break;
+                case 3:
+                    /* code */
+                    break;
+                case 4:
+                    /* code */
+                    break;
+                default:
+                    break;
+                }
+                system("cls");
+                break;
+            case 3:
+                printf("Rações pequenas:\n1\n2\n3\n4\nQual deseja comprar?\nDigite 5 para sair");
+                scanf("%d", &menu);
+                switch (menu)
+                {
+                case 1:
+                    /* code */
+                    break;
+                case 2:
+                    /* code */
+                    break;
+                case 3:
+                    /* code */
+                    break;
+                case 4:
+                    /* code */
+                    break;
+                default:
+                    break;
+                }
+                system("cls");
+                break;
+            default:
+                printf("Ocorreu um erro, por favor tente novamente.");
+                break;
+            }
+            break;
+        case 3:
+            if(cadastrado == 1)
+            {
+                printf("Qual dado deseja alterar?\n");
+                printf("1 - Raça\n2 - Sexo\n3 - Idade\n4 - tamanho\n5 - Se ele é castrado\n6 - Se possui alguma doença\n");
+                scanf("%d", &menu);
+                switch (menu)
+                {
+                case 1:
+                    fgetc(stdin);
+                    printf("Insira a raça do seu cachorro:\n");
+                    fgets(raca, sizeof(raca), stdin);
+                    break;
+                case 2:
+                    printf("Insira o sexo do seu cachorro (M/F):\n");
+                    scanf(" %c", &sexo);
+                    break;
+                case 3:
+                    printf("Insira a idade do seu cachorro:\n");
+                    scanf("%d", &idade);
+                    break;
+                case 4:
+                    printf("Insira o tamanho do seu cachorro:\n");
+                    scanf("%f", &tamanho);
+                    break;
+                case 5:
+                    printf("Seu cachorro é castrado? (S/N)\n");
+                    scanf(" %c", &castrado);
+                    break;
+                case 6:
+                    printf("Seu cachorro possui alguma doença? (S/N)\n");
+                    scanf(" %c", &doencas);
+                    break;
+                default:
+                    break;
+                }
+                system("cls");
+            }
+            else
+            {
+                printf("Você precisa cadastrar seu cachorro primeiro!\n");
+            }
+            break;
+        default:
+            printf("Ocorreu um erro, por favor tente novamente.");
+            break;
+        }
+        system("cls");
+    }
+  
+
+
+    return 0;
+}
