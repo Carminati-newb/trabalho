@@ -1,10 +1,9 @@
 
-
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
 
-#define TAM 2
+#define TAM 1
 #define MULTIPLICADOR_CASTRADO 0.2
 #define MULTIPLICADOR_DOENCA 0.3
 #define MULTIPLICADOR_CASTRADO_E_DOENCA 0.5
@@ -13,7 +12,7 @@
 typedef struct
 {
     float tamanho;
-    char raca[50], sexo, castrado, doencas, racao[50];
+    char raca[50], sexo, castrado, doencas;
     int idade, quantidade;
 } ficha;
 
@@ -96,7 +95,7 @@ int main()
     float preco, preco_final;
 
     int menu = 0;
-    while(menu != 5)
+    while(menu != 6)
     {
 
 
@@ -125,6 +124,8 @@ int main()
             break;
         // Compras
         case 2:
+
+            system("cls");
             if(cadastrado == 1){
             printf("1 - Racoes grandes\n2 - Racoes medias\n3 - Racoes pequenas\n\n");
             scanf("%d", &menu);
@@ -132,6 +133,7 @@ int main()
             switch (menu)
             {
             case 1:
+                system("cls");
                 printf("Racoes grandes:\n1 - Nutra Dog\n2 - Racao Seca PremieR\n3 - Racao Seca Pedigree\n4 - Racao Special Dog Prime\nQual deseja comprar?\n\nDigite 5 para sair\n");
                 scanf("%d", &menu);
                 switch (menu)
@@ -162,6 +164,7 @@ int main()
 
                 break;
             case 2:
+                system("cls");
                 printf("Racoes medias:\n1 - Racao Seca Quatree Life\n2 - Racao Equilibrio Veterinario\n3 - Ração Seca Nestlé Purina\n4 - Ração Affinity Petcare\nQual deseja comprar?\n\nDigite 5 para sair");
                 scanf("%d", &menu);
                 switch (menu)
@@ -192,6 +195,7 @@ int main()
                 system("cls");
                 break;
             case 3:
+                system("cls");
                 printf("Racoes pequenas:\n1 - Ração Pedigree Junior\n2 - Ração Royal Canin\n3 - Ração Filhote Premier\n4 - Ração Guabi Herói\nQual deseja comprar?\n\nDigite 5 para sair");
                 scanf("%d", &menu);
                 switch (menu)
@@ -300,4 +304,3 @@ int main()
 
     return 0;
 }
-
