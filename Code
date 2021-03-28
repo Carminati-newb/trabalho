@@ -1,9 +1,8 @@
-
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
 
-#define TAM 1
+#define TAM 2
 #define MULTIPLICADOR_CASTRADO 0.2
 #define MULTIPLICADOR_DOENCA 0.3
 #define MULTIPLICADOR_CASTRADO_E_DOENCA 0.5
@@ -60,7 +59,7 @@ void imprimir(ficha dogs[], int senha){
 // calcular o preco da racao
 void calcular(ficha dogs[], int senha, float *preco, float *preco_final){
 
-        printf("digite sua senha");
+        printf("digite sua senha\n");
             scanf("%d",&senha);
         if(senha>=0 || senha<TAM){
 
@@ -77,7 +76,7 @@ void calcular(ficha dogs[], int senha, float *preco, float *preco_final){
                     *preco_final = *preco * MULTIPLICADOR_DOENCA;
                 }
                 else{
-                    *preco_final = *preco;
+                    *preco_final = 0;
                 }
             }
         }
@@ -165,7 +164,7 @@ int main()
                 break;
             case 2:
                 system("cls");
-                printf("Racoes medias:\n1 - Racao Seca Quatree Life\n2 - Racao Equilibrio Veterinario\n3 - Ração Seca Nestlé Purina\n4 - Ração Affinity Petcare\nQual deseja comprar?\n\nDigite 5 para sair");
+                printf("Racoes medias:\n1 - Racao Seca Quatree Life\n2 - Racao Equilibrio Veterinario\n3 - Racao Seca Nestle Purina\n4 - Racao Affinity Petcare\nQual deseja comprar?\n\nDigite 5 para sair");
                 scanf("%d", &menu);
                 switch (menu)
                 {
@@ -192,11 +191,11 @@ int main()
                 default:
                     break;
                 }
-                system("cls");
+
                 break;
             case 3:
                 system("cls");
-                printf("Racoes pequenas:\n1 - Ração Pedigree Junior\n2 - Ração Royal Canin\n3 - Ração Filhote Premier\n4 - Ração Guabi Herói\nQual deseja comprar?\n\nDigite 5 para sair");
+                printf("Racoes pequenas:\n1 - Racao Pedigree Junior\n2 - Racao Royal Canin\n3 - Racao Filhote Premier\n4 - Racao Guabi Heroi\nQual deseja comprar?\n\nDigite 5 para sair");
                 scanf("%d", &menu);
                 switch (menu)
                 {
@@ -223,7 +222,7 @@ int main()
                 default:
                     break;
                 }
-                system("cls");
+
                 break;
             default:
                 printf("Ocorreu um erro, por favor tente novamente.");
@@ -232,10 +231,11 @@ int main()
             }else {
                 printf("voce nao se cadastrou\n");
             }
-            system("cls");
+
             break;
         // Alteração de dados
         case 3:
+            system("cls");
             if(cadastrado == 1)
             {
                 printf("digite sua senha:\n");
@@ -244,7 +244,7 @@ int main()
                 if(senha>=0 || senha<TAM)
                 {
                     printf("Qual dado deseja alterar?\n");
-                    printf("1 - Raca\n2 - Sexo\n3 - Idade\n4 - tamanho\n5 - Se ele eh castrado\n6 - Se possui alguma doen�a\n");
+                    printf("1 - Raca\n2 - Sexo\n3 - Idade\n4 - tamanho\n5 - Se ele eh castrado\n6 - Se possui alguma doenca\n");
                     scanf("%d", &menu);
                     switch (menu)
                     {
@@ -280,10 +280,10 @@ int main()
                 }else{
                 printf("Voce precisa cadastrar seu cachorro primeiro!\n");
             }
-                system("cls");
+
             // Impressão de dados
             case 4:
-
+                system("cls");
                if(cadastrado == 1){
                imprimir(dogs, senha);
 
@@ -291,7 +291,7 @@ int main()
             }else {
                 printf("voce nao se cadastrou\n");
             }
-            system("cls");
+
             break;
         default:
             printf("Ocorreu um erro, por favor tente novamente.");
